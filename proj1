@@ -1,0 +1,33 @@
+var k;
+
+function setup() {
+  createCanvas(800, 800);
+  alert("Noise function that goes in random directions with random colors");
+
+  background(0);
+  k = 25;
+  j = 1;
+}
+
+function draw() {
+  background(0, 5);
+
+  var x = width * noise(k);
+  var y = height * noise(k + 5);
+  var r = 255 * noise(k + 10);
+  var g = 255 * noise(k + 15);
+  var b = 255 * noise(k + 20);
+
+  var x = width * noise(j);
+  var y = height * noise(j + 10);
+  var r = 255 * noise(j + 15);
+  var g = 255 * noise(j + 20);
+  var b = 255 * noise(j + 25);
+
+noStroke();
+  fill(r, g, b);
+  ellipse(x, y, 120, 120);
+
+    k = k + 0.01;
+
+}
